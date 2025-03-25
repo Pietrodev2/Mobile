@@ -1,4 +1,5 @@
-import { Image, StyleSheet } from 'react-native';
+import { Image, StyleSheet, Platform } from 'react-native';
+//import { HelloWave } from '@/components/HelloWave';//
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -14,7 +15,7 @@ const carros = [
   },
   {
     id: 2,
-    marca: 'Mitsubishi',
+    marca: 'Mitsubishi ',
     modelo: 'Lancer',
     ano: 2015,
     cor: 'Cinza',
@@ -49,34 +50,18 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title" style={styles.title}>Carros Importados</ThemedText>
+        <ThemedText type="title" style={styles.text}></ThemedText>
+        
       </ThemedView>
-
-      {/* Exibindo as informações principais do carro */}
-      {carros.map((carro) => (
-        <ThemedView key={carro.id} style={styles.card}>
-          <Image source={{ uri: carro.image }} style={styles.carrosImage} />
-          <ThemedText type="subtitle" style={styles.text}>Marca: {carro.marca}</ThemedText>
-          <ThemedText type="subtitle" style={styles.text}>Modelo: {carro.modelo}</ThemedText>
-          <ThemedText type="subtitle" style={styles.text}>Ano: {carro.ano}</ThemedText>
+      {carros.map((carros) => (
+        <ThemedView key={carros.id} style={styles.card}>
+          <Image source={{ uri: carros.image }} style={styles.carrosImage} />
+          <ThemedText type="subtitle" style={styles.text}>Marca: {carros.marca}</ThemedText>
+          <ThemedText type="subtitle" style={styles.text}>Modelo: {carros.modelo}</ThemedText>
+          <ThemedText type="subtitle" style={styles.text}>Ano: {carros.ano}</ThemedText>
+          <ThemedText type="subtitle" style={styles.text}>Cor: {carros.cor}</ThemedText>
         </ThemedView>
       ))}
-
-      {/* Informações adicionais dos carros */}
-      <ThemedView style={styles.infoContainer}>
-        <ThemedText style={styles.infoText}>Detalhes Adicionais:</ThemedText>
-        {carros.map((carro) => (
-          <ThemedView key={carro.id} style={styles.infoCard}>
-            <Image source={{ uri: carro.image }} style={styles.miniCarrosImage} />
-            <ThemedView style={styles.infoTextContainer}>
-              <ThemedText style={styles.text}>Tipo de Combustível: Gasolina</ThemedText>
-              <ThemedText style={styles.text}>Potência: 150 CV</ThemedText>
-              <ThemedText style={styles.text}>Transmissão: Manual</ThemedText>
-            </ThemedView>
-          </ThemedView>
-        ))}
-      </ThemedView>
-
     </ParallaxScrollView>
   );
 }
@@ -88,11 +73,6 @@ const styles = StyleSheet.create({
     gap: 8,
     marginBottom: 10,
     paddingHorizontal: 16,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#fff',  // Cor do título para branco
   },
   card: {
     backgroundColor: '#fff',
@@ -121,34 +101,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 18,
-    color: 'white', 
+    color: 'black', 
     marginBottom: 5,
   },
-  infoContainer: {
-    marginTop: 20,
-    paddingHorizontal: 16,
-    paddingBottom: 20,
-  },
-  infoText: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  infoCard: {
-    flexDirection: 'row',
-    marginBottom: 12,
-    alignItems: 'center',
-    borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
-    paddingVertical: 8,
-  },
-  miniCarrosImage: {
-    width: 80,
-    height: 80,
-    borderRadius: 8,
-    marginRight: 15,
-  },
-  infoTextContainer: {
-    flex: 1,
-  }
 });
