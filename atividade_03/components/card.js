@@ -13,29 +13,34 @@ export default function Card({ carro }) {
                 <View style={styles.detalhes}>
                     <Text style={styles.detailsText}>Ano: {carro.ano}</Text>
                     <Text style={styles.detailsText}>Cor: {carro.cor}</Text>
-                    <Text style={styles.detailsText}>Preco: R${carro.preco.toLocaleString('pt-BR')}</Text>
-                    <Text style={styles.detailsText}>Avaliação: {carro.avaliacao}☆</Text>
+                    <Text style={styles.detailsText}>Preço: R${carro.preco.toLocaleString('pt-BR')}</Text>
+                    <Text style={styles.detailsText}>Avaliação: {carro.avaliacao}☆</Text>
                 </View>
             )}
-
         </TouchableOpacity>
-    )
+    );
 }
+
 
 const styles = StyleSheet.create({
     card: {
-        backgroundColor: '#f9f9f9',
+        backgroundColor: '#00BCD4', // Cor ciano
         padding: 10,
         marginBottom: 10,
         borderRadius: 8,
         width: 300,
         alignItems: 'center',
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 4,
+        elevation: 5, // Sombra para Android
     },
     cardText: {
         fontSize: 16,
-        color: '#333',
-        fontFamily: 'BigShoulders',
-        fontFamily: 'Inter_400Regular'
+        color: '#FFFFFF', // Texto branco para contraste
+        fontFamily: 'Inter_400Regular',
+        fontWeight: "bold"
     },
     image: {
         width: '100%',
@@ -44,13 +49,14 @@ const styles = StyleSheet.create({
     },
     detalhes: {
         marginTop: 8,
-        backgroundColor: '#ddd',
+        backgroundColor: '#00ACC1', // Tom um pouco mais escuro de ciano para contraste
         padding: 10,
         borderRadius: 8,
         width: '100%',
         alignItems: 'center'
     },
-      detailsText: {
-        fontFamily: 'Inter_400Regular'
+    detailsText: {
+        fontFamily: 'Inter_400Regular',
+        color: '#FFFFFF', // Texto branco para melhor visibilidade
     }
-})
+});
