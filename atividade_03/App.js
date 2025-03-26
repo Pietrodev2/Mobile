@@ -134,10 +134,10 @@ const InteriorsScreen = () => {
     <View style={styles.container}>
       <Text style={styles.title}>Interiores dos Carros</Text>
       <FlatList
-        data={interiores} // Lista de interiores
+        data={interiores} 
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
-          <CardInterior item={item} /> // Passando o item corretamente
+          <CardInterior item={item} /> 
         )}
       />
     </View>

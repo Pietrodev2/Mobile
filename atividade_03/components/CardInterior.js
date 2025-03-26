@@ -19,7 +19,7 @@ export default function CardInterior({ item }) {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#00BCD4', // Cor ciano
+    backgroundColor: '#00BCD4', 
     padding: 10,
     marginBottom: 10,
     borderRadius: 8,
@@ -29,11 +29,11 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 4,
-    elevation: 5, // Sombra para Android
+    elevation: 5, 
   },
   cardText: {
     fontSize: 16,
-    color: '#FFFFFF', // Texto branco para contraste
+    color: '#FFFFFF', 
     fontWeight: "bold"
   },
   image: {
@@ -43,13 +43,13 @@ const styles = StyleSheet.create({
   },
   detalhes: {
     marginTop: 8,
-    backgroundColor: '#00ACC1', // Tom mais escuro de ciano
+    backgroundColor: '#00ACC1', 
     padding: 10,
     borderRadius: 8,
     width: '100%',
     alignItems: 'center'
   },
   detailsText: {
-    color: '#FFFFFF', // Texto branco
+    color: '#FFFFFF', 
   }
 });
