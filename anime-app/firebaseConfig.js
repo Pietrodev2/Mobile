@@ -2,14 +2,13 @@ import { initializeApp } from "firebase/app";
 import {getFirestore} from 'firebase/firestore'
 import { getAuth } from "firebase/auth";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCz2lAANOvxAHiAtNYqMu7Lpt4QMBxGgBI",
-  authDomain: "animeapp-c0437.firebaseapp.com",
-  projectId: "animeapp-c0437",
-  storageBucket: "animeapp-c0437.firebasestorage.app",
-  messagingSenderId: "1027157461936",
-  appId: "1:1027157461936:web:955ce8e1ecc510d21d6475",
-  measurementId: "G-3631VLY49X"
+export const firebaseConfig = {
+  apiKey: 'YOUR_API_KEY',
+  authDomain: 'YOUR_AUTH_DOMAIN',
+  projectId: 'YOUR_PROJECT_ID',
+  storageBucket: 'YOUR_STORAGE_BUCKET',
+  messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
+  appId: 'YOUR_APP_ID',
 };
 
 const app = initializeApp(firebaseConfig);
